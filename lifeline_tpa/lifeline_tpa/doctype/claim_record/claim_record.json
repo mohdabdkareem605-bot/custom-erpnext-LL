@@ -1,0 +1,324 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "naming_series:",
+  "creation": "2026-06-18 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "claim_reference",
+    "po_batch",
+    "external_po_ref",
+    "source_row_number",
+    "parties_section",
+    "payer",
+    "provider",
+    "facility_id",
+    "provider_name_as_received",
+    "provider_invoice_number",
+    "amount_section",
+    "claim_amount",
+    "currency",
+    "purchase_invoice",
+    "process_payable_number",
+    "sales_invoice",
+    "payer_section",
+    "payer_allocated_amount",
+    "payer_outstanding_amount",
+    "payer_settlement_status",
+    "payer_payment_reference",
+    "payer_payment_date",
+    "provider_section",
+    "provider_paid_amount",
+    "provider_outstanding_amount",
+    "provider_settlement_status",
+    "provider_payment_reference",
+    "provider_payment_date",
+    "claim_section",
+    "claim_status",
+    "settlement_hold_reason",
+    "source_data_json"
+  ],
+  "fields": [
+    {
+      "default": "CLM-.YYYY.-.#####",
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "hidden": 1,
+      "label": "Naming Series",
+      "options": "CLM-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "claim_reference",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Claim Reference",
+      "read_only": 1,
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "po_batch",
+      "fieldtype": "Link",
+      "in_standard_filter": 1,
+      "label": "PO Batch",
+      "options": "Claims PO Batch",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "external_po_ref",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "POID/Year",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "source_row_number",
+      "fieldtype": "Int",
+      "label": "Source Row Number",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "parties_section",
+      "fieldtype": "Section Break",
+      "label": "Payer and Provider"
+    },
+    {
+      "fieldname": "payer",
+      "fieldtype": "Link",
+      "in_standard_filter": 1,
+      "label": "Payer",
+      "options": "Customer",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "provider",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Provider",
+      "options": "Supplier",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "facility_id",
+      "fieldtype": "Data",
+      "in_standard_filter": 1,
+      "label": "Facility ID",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "provider_name_as_received",
+      "fieldtype": "Data",
+      "label": "Provider Name as Received",
+      "read_only": 1
+    },
+    {
+      "fieldname": "provider_invoice_number",
+      "fieldtype": "Data",
+      "label": "Provider Invoice #",
+      "read_only": 1
+    },
+    {
+      "fieldname": "amount_section",
+      "fieldtype": "Section Break",
+      "label": "Accounting"
+    },
+    {
+      "fieldname": "claim_amount",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Claim Amount",
+      "options": "currency",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "purchase_invoice",
+      "fieldtype": "Link",
+      "label": "Purchase Invoice",
+      "options": "Purchase Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "process_payable_number",
+      "fieldtype": "Data",
+      "in_standard_filter": 1,
+      "label": "Process Payable Number",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sales_invoice",
+      "fieldtype": "Link",
+      "label": "Sales Invoice",
+      "options": "Sales Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "payer_section",
+      "fieldtype": "Section Break",
+      "label": "Payer Settlement"
+    },
+    {
+      "default": "0",
+      "fieldname": "payer_allocated_amount",
+      "fieldtype": "Currency",
+      "label": "Payer Allocated Amount",
+      "options": "currency",
+      "read_only": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "payer_outstanding_amount",
+      "fieldtype": "Currency",
+      "label": "Payer Outstanding Amount",
+      "options": "currency",
+      "read_only": 1
+    },
+    {
+      "default": "Unpaid",
+      "fieldname": "payer_settlement_status",
+      "fieldtype": "Select",
+      "in_standard_filter": 1,
+      "label": "Payer Settlement Status",
+      "options": "Unpaid\nPartially Paid\nPaid",
+      "read_only": 1
+    },
+    {
+      "fieldname": "payer_payment_reference",
+      "fieldtype": "Data",
+      "label": "Payer Payment Reference",
+      "read_only": 1
+    },
+    {
+      "fieldname": "payer_payment_date",
+      "fieldtype": "Date",
+      "label": "Payer Payment Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "provider_section",
+      "fieldtype": "Section Break",
+      "label": "Provider Settlement"
+    },
+    {
+      "default": "0",
+      "fieldname": "provider_paid_amount",
+      "fieldtype": "Currency",
+      "label": "Provider Paid Amount",
+      "options": "currency",
+      "read_only": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "provider_outstanding_amount",
+      "fieldtype": "Currency",
+      "label": "Provider Outstanding Amount",
+      "options": "currency",
+      "read_only": 1
+    },
+    {
+      "default": "Unpaid",
+      "fieldname": "provider_settlement_status",
+      "fieldtype": "Select",
+      "in_standard_filter": 1,
+      "label": "Provider Settlement Status",
+      "options": "Unpaid\nPartially Paid\nPaid\nOn Hold",
+      "read_only": 1
+    },
+    {
+      "fieldname": "provider_payment_reference",
+      "fieldtype": "Data",
+      "label": "Provider Payment Reference",
+      "read_only": 1
+    },
+    {
+      "fieldname": "provider_payment_date",
+      "fieldtype": "Date",
+      "label": "Provider Payment Date",
+      "read_only": 1
+    },
+    {
+      "fieldname": "claim_section",
+      "fieldtype": "Section Break",
+      "label": "Claim Control"
+    },
+    {
+      "default": "Active",
+      "fieldname": "claim_status",
+      "fieldtype": "Select",
+      "in_standard_filter": 1,
+      "label": "Claim Status",
+      "options": "Active\nRemoved",
+      "read_only": 1
+    },
+    {
+      "fieldname": "settlement_hold_reason",
+      "fieldtype": "Small Text",
+      "label": "Settlement Hold Reason",
+      "read_only": 1
+    },
+    {
+      "fieldname": "source_data_json",
+      "fieldtype": "Long Text",
+      "hidden": 1,
+      "label": "Source Data JSON",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "links": [],
+  "modified": "2026-06-18 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Lifeline TPA",
+  "name": "Claim Record",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Lifeline TPA Manager",
+      "share": 1
+    },
+    {
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Lifeline TPA User"
+    },
+    {
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Lifeline TPA Read Only"
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}
+

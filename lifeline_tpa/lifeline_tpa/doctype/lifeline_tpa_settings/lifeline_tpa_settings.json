@@ -1,0 +1,129 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "creation": "2026-06-18 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "accounting_section",
+    "claims_receivable_account",
+    "claims_payable_account",
+    "claims_clearing_account",
+    "medical_claim_item",
+    "default_cost_center",
+    "import_section",
+    "source_sheet_name",
+    "expected_payment_days",
+    "auto_allocation_rule"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "accounting_section",
+      "fieldtype": "Section Break",
+      "label": "Accounting Defaults"
+    },
+    {
+      "fieldname": "claims_receivable_account",
+      "fieldtype": "Link",
+      "label": "Claims Receivable Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "claims_payable_account",
+      "fieldtype": "Link",
+      "label": "Claims Payable Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "claims_clearing_account",
+      "fieldtype": "Link",
+      "label": "Claims Clearing Control Account",
+      "options": "Account",
+      "reqd": 1
+    },
+    {
+      "fieldname": "medical_claim_item",
+      "fieldtype": "Link",
+      "label": "Medical Claim Item",
+      "options": "Item",
+      "reqd": 1
+    },
+    {
+      "fieldname": "default_cost_center",
+      "fieldtype": "Link",
+      "label": "Default Cost Center",
+      "options": "Cost Center",
+      "reqd": 1
+    },
+    {
+      "fieldname": "import_section",
+      "fieldtype": "Section Break",
+      "label": "Import and Allocation"
+    },
+    {
+      "default": "Master Sheet",
+      "fieldname": "source_sheet_name",
+      "fieldtype": "Data",
+      "label": "Source Sheet Name",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "default": "45",
+      "fieldname": "expected_payment_days",
+      "fieldtype": "Int",
+      "label": "Expected Payment Days",
+      "reqd": 1
+    },
+    {
+      "default": "Process Payable Order",
+      "fieldname": "auto_allocation_rule",
+      "fieldtype": "Select",
+      "label": "Default Auto Allocation Rule",
+      "options": "Process Payable Order\nClaim File Order\nOldest Claim First",
+      "reqd": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "issingle": 1,
+  "links": [],
+  "modified": "2026-06-18 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Lifeline TPA",
+  "name": "Lifeline TPA Settings",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "read": 1,
+      "role": "Lifeline TPA Manager",
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}
+

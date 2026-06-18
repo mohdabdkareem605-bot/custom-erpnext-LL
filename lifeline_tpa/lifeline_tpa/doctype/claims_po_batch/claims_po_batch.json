@@ -1,0 +1,204 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "naming_series:",
+  "creation": "2026-06-18 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "company",
+    "payer",
+    "posting_date",
+    "expected_payment_date",
+    "source_section",
+    "source_file",
+    "source_file_hash",
+    "external_po_ref",
+    "currency",
+    "processing_section",
+    "status",
+    "background_job_id",
+    "total_claims",
+    "total_providers",
+    "total_amount",
+    "clearing_difference",
+    "validation_log"
+  ],
+  "fields": [
+    {
+      "default": "CPO-.YYYY.-.#####",
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "hidden": 1,
+      "label": "Naming Series",
+      "options": "CPO-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "in_standard_filter": 1,
+      "label": "Company",
+      "options": "Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "payer",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Payer",
+      "options": "Customer",
+      "reqd": 1
+    },
+    {
+      "default": "Today",
+      "fieldname": "posting_date",
+      "fieldtype": "Date",
+      "in_list_view": 1,
+      "label": "Posting Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "expected_payment_date",
+      "fieldtype": "Date",
+      "label": "Expected Payment Date"
+    },
+    {
+      "fieldname": "source_section",
+      "fieldtype": "Section Break",
+      "label": "Source PO"
+    },
+    {
+      "fieldname": "source_file",
+      "fieldtype": "Attach",
+      "label": "PO Excel File",
+      "reqd": 1
+    },
+    {
+      "fieldname": "source_file_hash",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "label": "Source File Hash",
+      "read_only": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "external_po_ref",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "POID/Year",
+      "read_only": 1
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "processing_section",
+      "fieldtype": "Section Break",
+      "label": "Validation and Processing"
+    },
+    {
+      "default": "Draft",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Status",
+      "options": "Draft\nValidating\nValidation Failed\nValidated\nProcessing\nProcessed\nPartially Settled\nFully Settled\nFailed\nCancelled",
+      "read_only": 1
+    },
+    {
+      "fieldname": "background_job_id",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "label": "Background Job ID",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_claims",
+      "fieldtype": "Int",
+      "label": "Total Claims",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_providers",
+      "fieldtype": "Int",
+      "label": "Total Providers",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_amount",
+      "fieldtype": "Currency",
+      "label": "Total Amount",
+      "options": "currency",
+      "read_only": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "clearing_difference",
+      "fieldtype": "Currency",
+      "label": "Clearing Difference",
+      "options": "currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "validation_log",
+      "fieldtype": "Long Text",
+      "label": "Validation Log",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "is_submittable": 1,
+  "links": [],
+  "modified": "2026-06-18 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Lifeline TPA",
+  "name": "Claims PO Batch",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "cancel": 1,
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Lifeline TPA Manager",
+      "share": 1,
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Lifeline TPA User",
+      "submit": 1,
+      "write": 1
+    },
+    {
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Lifeline TPA Read Only"
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}
+
