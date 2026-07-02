@@ -2,45 +2,45 @@
   "actions": [],
   "allow_rename": 0,
   "autoname": "naming_series:",
-  "creation": "2026-06-18 00:00:00.000000",
+  "creation": "2026-06-22 00:00:00.000000",
   "doctype": "DocType",
   "engine": "InnoDB",
   "field_order": [
     "naming_series",
     "company",
     "payer",
+    "po_batch",
     "posting_date",
-    "expected_payment_date",
     "source_section",
     "source_file",
     "source_file_hash",
-    "external_po_ref",
-    "currency",
     "processing_section",
     "status",
-    "background_job_id",
+    "total_claims",
+    "total_amount",
+    "payment_entries",
     "processed_by",
     "processed_date",
-    "total_claims",
-    "total_providers",
-    "total_amount",
-    "clearing_difference",
+    "claims_section",
+    "claims",
+    "logs_section",
     "validation_log",
     "processing_log"
   ],
   "fields": [
     {
-      "default": "CPO-.YYYY.-.#####",
+      "default": "PRS-.YYYY.-.#####",
       "fieldname": "naming_series",
       "fieldtype": "Select",
       "hidden": 1,
       "label": "Naming Series",
-      "options": "CPO-.YYYY.-.#####",
+      "options": "PRS-.YYYY.-.#####",
       "reqd": 1
     },
     {
       "fieldname": "company",
       "fieldtype": "Link",
+      "in_list_view": 1,
       "in_standard_filter": 1,
       "label": "Company",
       "options": "Company",
@@ -56,6 +56,13 @@
       "reqd": 1
     },
     {
+      "fieldname": "po_batch",
+      "fieldtype": "Link",
+      "in_standard_filter": 1,
+      "label": "Claims PO Batch",
+      "options": "Claims PO Batch"
+    },
+    {
       "default": "Today",
       "fieldname": "posting_date",
       "fieldtype": "Date",
@@ -64,19 +71,14 @@
       "reqd": 1
     },
     {
-      "fieldname": "expected_payment_date",
-      "fieldtype": "Date",
-      "label": "Expected Payment Date"
-    },
-    {
       "fieldname": "source_section",
       "fieldtype": "Section Break",
-      "label": "Source PO"
+      "label": "Receipt Upload"
     },
     {
       "fieldname": "source_file",
       "fieldtype": "Attach",
-      "label": "PO Excel File",
+      "label": "Payer Receipt File",
       "reqd": 1
     },
     {
@@ -84,22 +86,6 @@
       "fieldtype": "Data",
       "hidden": 1,
       "label": "Source File Hash",
-      "read_only": 1,
-      "unique": 1
-    },
-    {
-      "fieldname": "external_po_ref",
-      "fieldtype": "Data",
-      "in_list_view": 1,
-      "in_standard_filter": 1,
-      "label": "POID/Year",
-      "read_only": 1
-    },
-    {
-      "fieldname": "currency",
-      "fieldtype": "Link",
-      "label": "Currency",
-      "options": "Currency",
       "read_only": 1
     },
     {
@@ -114,14 +100,25 @@
       "in_list_view": 1,
       "in_standard_filter": 1,
       "label": "Status",
-      "options": "Draft\nValidating\nValidation Failed\nValidated\nImported\nProcessing\nProcessed\nPartially Settled\nFully Settled\nFailed\nCancelled",
+      "options": "Draft\nValidating\nValidation Failed\nValidated\nProcessing\nProcessed\nFailed\nCancelled",
       "read_only": 1
     },
     {
-      "fieldname": "background_job_id",
-      "fieldtype": "Data",
-      "hidden": 1,
-      "label": "Background Job ID",
+      "fieldname": "total_claims",
+      "fieldtype": "Int",
+      "label": "Total Claims",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_amount",
+      "fieldtype": "Currency",
+      "label": "Total Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "payment_entries",
+      "fieldtype": "Long Text",
+      "label": "Payment Entries",
       "read_only": 1
     },
     {
@@ -138,31 +135,21 @@
       "read_only": 1
     },
     {
-      "fieldname": "total_claims",
-      "fieldtype": "Int",
-      "label": "Total Claims",
+      "fieldname": "claims_section",
+      "fieldtype": "Section Break",
+      "label": "Claims"
+    },
+    {
+      "fieldname": "claims",
+      "fieldtype": "Table",
+      "label": "Claims",
+      "options": "Payer Receipt Settlement Item",
       "read_only": 1
     },
     {
-      "fieldname": "total_providers",
-      "fieldtype": "Int",
-      "label": "Total Providers",
-      "read_only": 1
-    },
-    {
-      "fieldname": "total_amount",
-      "fieldtype": "Currency",
-      "label": "Total Amount",
-      "options": "currency",
-      "read_only": 1
-    },
-    {
-      "default": "0",
-      "fieldname": "clearing_difference",
-      "fieldtype": "Currency",
-      "label": "Clearing Difference",
-      "options": "currency",
-      "read_only": 1
+      "fieldname": "logs_section",
+      "fieldtype": "Section Break",
+      "label": "Logs"
     },
     {
       "fieldname": "validation_log",
@@ -180,16 +167,15 @@
   "index_web_pages_for_search": 0,
   "is_submittable": 1,
   "links": [],
-  "modified": "2026-06-18 00:00:00.000000",
+  "modified": "2026-06-22 00:00:00.000000",
   "modified_by": "Administrator",
   "module": "Lifeline TPA",
-  "name": "Claims PO Batch",
+  "name": "Payer Receipt Settlement",
   "owner": "Administrator",
   "permissions": [
     {
       "cancel": 1,
       "create": 1,
-      "delete": 1,
       "email": 1,
       "export": 1,
       "print": 1,

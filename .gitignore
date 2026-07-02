@@ -24,4 +24,6 @@ Thumbs.db
 *.swo
 
 .tmp_spreadsheet/
-
+.codex_tmp/
+tmp/
+outputs/

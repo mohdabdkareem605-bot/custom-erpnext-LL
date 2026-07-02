@@ -12,6 +12,13 @@
     "claims_clearing_account",
     "medical_claim_item",
     "default_cost_center",
+    "revenue_section",
+    "tpa_fee_item",
+    "tpa_revenue_account",
+    "deferred_tpa_revenue_account",
+    "revenue_receivable_account",
+    "revenue_sales_taxes_template",
+    "max_revenue_invoice_lines",
     "import_section",
     "source_sheet_name",
     "expected_payment_days",
@@ -63,6 +70,48 @@
       "fieldtype": "Link",
       "label": "Default Cost Center",
       "options": "Cost Center",
+      "reqd": 1
+    },
+    {
+      "fieldname": "revenue_section",
+      "fieldtype": "Section Break",
+      "label": "TPA Revenue Defaults"
+    },
+    {
+      "fieldname": "tpa_fee_item",
+      "fieldtype": "Link",
+      "label": "TPA Fee Item",
+      "options": "Item"
+    },
+    {
+      "fieldname": "tpa_revenue_account",
+      "fieldtype": "Link",
+      "label": "TPA Revenue Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "deferred_tpa_revenue_account",
+      "fieldtype": "Link",
+      "label": "Deferred TPA Revenue Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "revenue_receivable_account",
+      "fieldtype": "Link",
+      "label": "Revenue Receivable Account",
+      "options": "Account"
+    },
+    {
+      "fieldname": "revenue_sales_taxes_template",
+      "fieldtype": "Link",
+      "label": "Revenue Sales Taxes Template",
+      "options": "Sales Taxes and Charges Template"
+    },
+    {
+      "default": "1000",
+      "fieldname": "max_revenue_invoice_lines",
+      "fieldtype": "Int",
+      "label": "Max Revenue Invoice Lines",
       "reqd": 1
     },
     {
@@ -126,4 +175,3 @@
   "sort_order": "DESC",
   "states": []
 }
-

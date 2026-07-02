@@ -21,8 +21,17 @@
     "claim_amount",
     "currency",
     "purchase_invoice",
+    "purchase_invoice_item",
     "process_payable_number",
     "sales_invoice",
+    "sales_invoice_item",
+    "removal_section",
+    "removal_batch",
+    "purchase_debit_note",
+    "sales_credit_note",
+    "removal_reason",
+    "removal_approval_reference",
+    "removed_date",
     "payer_section",
     "payer_allocated_amount",
     "payer_outstanding_amount",
@@ -159,6 +168,13 @@
       "read_only": 1
     },
     {
+      "fieldname": "purchase_invoice_item",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "label": "Purchase Invoice Item",
+      "read_only": 1
+    },
+    {
       "fieldname": "process_payable_number",
       "fieldtype": "Data",
       "in_standard_filter": 1,
@@ -170,6 +186,58 @@
       "fieldtype": "Link",
       "label": "Sales Invoice",
       "options": "Sales Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sales_invoice_item",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "label": "Sales Invoice Item",
+      "read_only": 1
+    },
+    {
+      "fieldname": "removal_section",
+      "fieldtype": "Section Break",
+      "label": "Claim Removal"
+    },
+    {
+      "fieldname": "removal_batch",
+      "fieldtype": "Link",
+      "in_standard_filter": 1,
+      "label": "Removal Batch",
+      "options": "Claim Removal Batch",
+      "read_only": 1
+    },
+    {
+      "fieldname": "purchase_debit_note",
+      "fieldtype": "Link",
+      "label": "Purchase Debit Note",
+      "options": "Purchase Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sales_credit_note",
+      "fieldtype": "Link",
+      "label": "Sales Credit Note",
+      "options": "Sales Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "removal_reason",
+      "fieldtype": "Small Text",
+      "label": "Removal Reason",
+      "read_only": 1
+    },
+    {
+      "fieldname": "removal_approval_reference",
+      "fieldtype": "Data",
+      "label": "Removal Approval Reference",
+      "read_only": 1
+    },
+    {
+      "fieldname": "removed_date",
+      "fieldtype": "Date",
+      "label": "Removed Date",
       "read_only": 1
     },
     {
@@ -281,6 +349,7 @@
       "fieldtype": "Long Text",
       "hidden": 1,
       "label": "Source Data JSON",
+      "permlevel": 1,
       "read_only": 1
     }
   ],
@@ -292,6 +361,11 @@
   "name": "Claim Record",
   "owner": "Administrator",
   "permissions": [
+    {
+      "permlevel": 1,
+      "read": 1,
+      "role": "Lifeline TPA Manager"
+    },
     {
       "email": 1,
       "export": 1,
@@ -321,4 +395,3 @@
   "sort_order": "DESC",
   "states": []
 }
-

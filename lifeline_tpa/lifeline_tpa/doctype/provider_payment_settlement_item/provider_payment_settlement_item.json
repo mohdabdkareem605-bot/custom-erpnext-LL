@@ -1,0 +1,170 @@
+{
+  "actions": [],
+  "autoname": "hash",
+  "creation": "2026-06-22 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "source_row_number",
+    "claim_record",
+    "claim_reference",
+    "po_batch",
+    "payer",
+    "provider",
+    "purchase_invoice",
+    "process_payable_number",
+    "claim_amount",
+    "already_paid_amount",
+    "outstanding_amount",
+    "amount_paid",
+    "new_outstanding_amount",
+    "lifeline_bank_account",
+    "payment_reference",
+    "payment_entry",
+    "status",
+    "error_message"
+  ],
+  "fields": [
+    {
+      "columns": 1,
+      "fieldname": "source_row_number",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Row",
+      "read_only": 1
+    },
+    {
+      "fieldname": "claim_record",
+      "fieldtype": "Link",
+      "label": "Claim Record",
+      "options": "Claim Record",
+      "read_only": 1
+    },
+    {
+      "columns": 2,
+      "fieldname": "claim_reference",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Claim Unique Number",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "po_batch",
+      "fieldtype": "Link",
+      "label": "Claims PO Batch",
+      "options": "Claims PO Batch",
+      "read_only": 1
+    },
+    {
+      "fieldname": "payer",
+      "fieldtype": "Link",
+      "label": "Payer",
+      "options": "Customer",
+      "read_only": 1
+    },
+    {
+      "fieldname": "provider",
+      "fieldtype": "Link",
+      "label": "Provider",
+      "options": "Supplier",
+      "read_only": 1
+    },
+    {
+      "fieldname": "purchase_invoice",
+      "fieldtype": "Link",
+      "label": "Purchase Invoice",
+      "options": "Purchase Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "process_payable_number",
+      "fieldtype": "Data",
+      "label": "Process Payable Number",
+      "read_only": 1
+    },
+    {
+      "fieldname": "claim_amount",
+      "fieldtype": "Currency",
+      "label": "Claim Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "already_paid_amount",
+      "fieldtype": "Currency",
+      "label": "Already Paid Amount",
+      "read_only": 1
+    },
+    {
+      "fieldname": "outstanding_amount",
+      "fieldtype": "Currency",
+      "label": "Outstanding Amount",
+      "read_only": 1
+    },
+    {
+      "columns": 1,
+      "fieldname": "amount_paid",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Amount Paid",
+      "read_only": 1
+    },
+    {
+      "fieldname": "new_outstanding_amount",
+      "fieldtype": "Currency",
+      "label": "New Outstanding Amount",
+      "read_only": 1
+    },
+    {
+      "columns": 2,
+      "fieldname": "lifeline_bank_account",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Lifeline Bank Account",
+      "read_only": 1
+    },
+    {
+      "columns": 2,
+      "fieldname": "payment_reference",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Payment Reference",
+      "read_only": 1
+    },
+    {
+      "fieldname": "payment_entry",
+      "fieldtype": "Link",
+      "label": "Payment Entry",
+      "options": "Payment Entry",
+      "read_only": 1
+    },
+    {
+      "columns": 1,
+      "default": "Ready",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Status",
+      "options": "Ready\nProcessed\nFailed",
+      "read_only": 1
+    },
+    {
+      "fieldname": "error_message",
+      "fieldtype": "Small Text",
+      "label": "Error",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "istable": 1,
+  "modified": "2026-06-22 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Lifeline TPA",
+  "name": "Provider Payment Settlement Item",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}

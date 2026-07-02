@@ -1,0 +1,342 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "naming_series:",
+  "creation": "2026-06-22 00:00:00.000000",
+  "doctype": "DocType",
+  "engine": "InnoDB",
+  "field_order": [
+    "naming_series",
+    "revenue_batch",
+    "company",
+    "source_row_number",
+    "status",
+    "period_section",
+    "endorsement_year",
+    "endorsement_month",
+    "endorsement_date",
+    "endorsement_type",
+    "policy_section",
+    "payer",
+    "payer_name_as_received",
+    "group_name",
+    "policy_no",
+    "policy_start_date",
+    "policy_stop_date",
+    "policy_category",
+    "member_section",
+    "employee_id",
+    "member_name",
+    "member_second_name",
+    "card_no",
+    "member_id",
+    "amount_section",
+    "tpa_fee",
+    "currency",
+    "gross_premium",
+    "prorata_gross_premium",
+    "accounting_section",
+    "sales_invoice",
+    "sales_invoice_item",
+    "sales_credit_note",
+    "deferral_journal_entry",
+    "source_data_json"
+  ],
+  "fields": [
+    {
+      "default": "TRE-.YYYY.-.#####",
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "hidden": 1,
+      "label": "Naming Series",
+      "options": "TRE-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "revenue_batch",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Revenue Batch",
+      "options": "TPA Revenue Batch",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "in_standard_filter": 1,
+      "label": "Company",
+      "options": "Company",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "source_row_number",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Source Row",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "default": "Ready",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Status",
+      "options": "Ready\nProcessed\nFailed\nCancelled",
+      "read_only": 1
+    },
+    {
+      "fieldname": "period_section",
+      "fieldtype": "Section Break",
+      "label": "Endorsement"
+    },
+    {
+      "fieldname": "endorsement_year",
+      "fieldtype": "Int",
+      "in_standard_filter": 1,
+      "label": "Endorsement Year",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "endorsement_month",
+      "fieldtype": "Int",
+      "in_standard_filter": 1,
+      "label": "Endorsement Month",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "endorsement_date",
+      "fieldtype": "Date",
+      "in_standard_filter": 1,
+      "label": "Endorsement Date",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "endorsement_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Endorsement Type",
+      "options": "Inception\nAddition\nDeletion",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "policy_section",
+      "fieldtype": "Section Break",
+      "label": "Policy and Payer"
+    },
+    {
+      "fieldname": "payer",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Payer",
+      "options": "Customer",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "payer_name_as_received",
+      "fieldtype": "Data",
+      "label": "Payer Name as Received",
+      "read_only": 1
+    },
+    {
+      "fieldname": "group_name",
+      "fieldtype": "Data",
+      "label": "Group Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "policy_no",
+      "fieldtype": "Data",
+      "in_standard_filter": 1,
+      "label": "Policy No",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "policy_start_date",
+      "fieldtype": "Date",
+      "label": "Policy Start Date",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "policy_stop_date",
+      "fieldtype": "Date",
+      "label": "Policy Stop Date",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "policy_category",
+      "fieldtype": "Data",
+      "label": "Policy Category",
+      "read_only": 1
+    },
+    {
+      "fieldname": "member_section",
+      "fieldtype": "Section Break",
+      "label": "Member"
+    },
+    {
+      "fieldname": "employee_id",
+      "fieldtype": "Data",
+      "label": "Employee ID",
+      "read_only": 1
+    },
+    {
+      "fieldname": "member_name",
+      "fieldtype": "Data",
+      "label": "Member Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "member_second_name",
+      "fieldtype": "Data",
+      "label": "Member Second Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "card_no",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Card No",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "member_id",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Member ID",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "amount_section",
+      "fieldtype": "Section Break",
+      "label": "Amounts"
+    },
+    {
+      "fieldname": "tpa_fee",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "TPA/Service Fees",
+      "options": "currency",
+      "precision": "6",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "default": "AED",
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "gross_premium",
+      "fieldtype": "Currency",
+      "label": "Gross Premium",
+      "options": "currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "prorata_gross_premium",
+      "fieldtype": "Currency",
+      "label": "Prorata Gross Premium",
+      "options": "currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "accounting_section",
+      "fieldtype": "Section Break",
+      "label": "Accounting Links"
+    },
+    {
+      "fieldname": "sales_invoice",
+      "fieldtype": "Link",
+      "label": "Sales Invoice",
+      "options": "Sales Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sales_invoice_item",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "label": "Sales Invoice Item",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sales_credit_note",
+      "fieldtype": "Link",
+      "label": "Sales Credit Note",
+      "options": "Sales Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "deferral_journal_entry",
+      "fieldtype": "Link",
+      "label": "Deferral Journal Entry",
+      "options": "Journal Entry",
+      "read_only": 1
+    },
+    {
+      "fieldname": "source_data_json",
+      "fieldtype": "Long Text",
+      "label": "Source Data JSON",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "links": [],
+  "modified": "2026-06-22 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Lifeline TPA",
+  "name": "TPA Revenue Event",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Lifeline TPA Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Lifeline TPA User"
+    },
+    {
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Lifeline TPA Read Only"
+    }
+  ],
+  "sort_field": "source_row_number",
+  "sort_order": "ASC",
+  "states": []
+}

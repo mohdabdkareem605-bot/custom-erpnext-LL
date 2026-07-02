@@ -1,0 +1,192 @@
+{
+  "actions": [],
+  "autoname": "hash",
+  "creation": "2026-06-19 00:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "source_row_number",
+    "claim_record",
+    "claim_reference",
+    "po_batch",
+    "payer",
+    "provider",
+    "claim_amount",
+    "currency",
+    "processing_mode",
+    "removal_reason",
+    "approval_reference",
+    "removal_date",
+    "original_purchase_invoice",
+    "original_purchase_invoice_item",
+    "original_sales_invoice",
+    "original_sales_invoice_item",
+    "purchase_debit_note",
+    "sales_credit_note",
+    "status",
+    "error_message"
+  ],
+  "fields": [
+    {
+      "columns": 1,
+      "fieldname": "source_row_number",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Row",
+      "read_only": 1
+    },
+    {
+      "fieldname": "claim_record",
+      "fieldtype": "Link",
+      "label": "Claim Record",
+      "options": "Claim Record",
+      "read_only": 1
+    },
+    {
+      "columns": 2,
+      "fieldname": "claim_reference",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Unique Transaction ID",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "po_batch",
+      "fieldtype": "Link",
+      "label": "Claims PO Batch",
+      "options": "Claims PO Batch",
+      "read_only": 1
+    },
+    {
+      "fieldname": "payer",
+      "fieldtype": "Link",
+      "label": "Payer",
+      "options": "Customer",
+      "read_only": 1
+    },
+    {
+      "fieldname": "provider",
+      "fieldtype": "Link",
+      "label": "Provider",
+      "options": "Supplier",
+      "read_only": 1
+    },
+    {
+      "columns": 1,
+      "fieldname": "claim_amount",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Claim Amount",
+      "options": "currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency",
+      "read_only": 1
+    },
+    {
+      "columns": 2,
+      "fieldname": "processing_mode",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Processing Mode",
+      "options": "Unprocessed Removal\nAccounting Reversal\nLegacy Accounting Reversal",
+      "read_only": 1
+    },
+    {
+      "fieldname": "removal_reason",
+      "fieldtype": "Small Text",
+      "label": "Removal Reason",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "approval_reference",
+      "fieldtype": "Data",
+      "label": "Approval Reference",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "removal_date",
+      "fieldtype": "Date",
+      "label": "Removal Date",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "original_purchase_invoice",
+      "fieldtype": "Link",
+      "label": "Original Purchase Invoice",
+      "options": "Purchase Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "original_purchase_invoice_item",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "label": "Original Purchase Invoice Item",
+      "read_only": 1
+    },
+    {
+      "fieldname": "original_sales_invoice",
+      "fieldtype": "Link",
+      "label": "Original Sales Invoice",
+      "options": "Sales Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "original_sales_invoice_item",
+      "fieldtype": "Data",
+      "hidden": 1,
+      "label": "Original Sales Invoice Item",
+      "read_only": 1
+    },
+    {
+      "fieldname": "purchase_debit_note",
+      "fieldtype": "Link",
+      "label": "Purchase Debit Note",
+      "options": "Purchase Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sales_credit_note",
+      "fieldtype": "Link",
+      "label": "Sales Credit Note",
+      "options": "Sales Invoice",
+      "read_only": 1
+    },
+    {
+      "columns": 1,
+      "default": "Ready",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Status",
+      "options": "Ready\nProcessed\nFailed",
+      "read_only": 1
+    },
+    {
+      "fieldname": "error_message",
+      "fieldtype": "Small Text",
+      "label": "Error",
+      "read_only": 1
+    }
+  ],
+  "index_web_pages_for_search": 0,
+  "istable": 1,
+  "modified": "2026-06-19 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Lifeline TPA",
+  "name": "Claim Removal Item",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": []
+}

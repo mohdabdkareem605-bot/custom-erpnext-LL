@@ -35,14 +35,18 @@ AED 401,060.87.
 
 Exit condition: submitted invoices reconcile and batch clearing difference is zero.
 
+Status: complete, including the processed PO Excel export.
+
 ## Phase 3 — Payer settlement
 
 - Claim-wise settlement import.
-- PO/process-payable settlement allocation screen.
 - Partial allocations.
 - Payment Entry generation.
-- Duplicate bank-reference controls.
+- Duplicate file/reference controls.
 - Payer outstanding and reconciliation reports.
+
+Status: claim-level payer receipt upload is implemented with a simple
+three-column file and standard Payment Entry Receive posting.
 
 ## Phase 4 — Provider settlement
 
@@ -51,6 +55,10 @@ Exit condition: submitted invoices reconcile and batch clearing difference is ze
 - Supplier Payment Entry generation.
 - Partial payment allocation.
 - Provider outstanding and hold reports.
+
+Status: claim-level provider payment upload is implemented with a simple
+four-column file, optional provider selection, and standard Payment Entry Pay
+posting grouped by provider, bank account, and payment reference.
 
 ## Phase 5 — Adjustments and controls
 
@@ -67,4 +75,3 @@ Exit condition: submitted invoices reconcile and batch clearing difference is ze
 - Finance reconciliation.
 - User training.
 - Production deployment and monitored parallel run.
-

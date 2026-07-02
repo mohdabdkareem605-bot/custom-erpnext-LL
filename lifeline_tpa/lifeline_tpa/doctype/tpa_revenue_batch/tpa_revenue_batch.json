@@ -2,57 +2,55 @@
   "actions": [],
   "allow_rename": 0,
   "autoname": "naming_series:",
-  "creation": "2026-06-18 00:00:00.000000",
+  "creation": "2026-06-22 00:00:00.000000",
   "doctype": "DocType",
   "engine": "InnoDB",
   "field_order": [
     "naming_series",
     "company",
-    "payer",
     "posting_date",
-    "expected_payment_date",
+    "endorsement_year",
+    "endorsement_month",
+    "currency",
     "source_section",
     "source_file",
     "source_file_hash",
-    "external_po_ref",
-    "currency",
     "processing_section",
     "status",
+    "validation_summary",
     "background_job_id",
     "processed_by",
     "processed_date",
-    "total_claims",
-    "total_providers",
-    "total_amount",
-    "clearing_difference",
+    "totals_section",
+    "total_events",
+    "total_positive_events",
+    "total_deletion_events",
+    "total_payers",
+    "total_invoice_amount",
+    "total_credit_note_amount",
+    "net_tpa_fee",
+    "total_schedule_amount",
+    "logs_section",
     "validation_log",
     "processing_log"
   ],
   "fields": [
     {
-      "default": "CPO-.YYYY.-.#####",
+      "default": "TRB-.YYYY.-.#####",
       "fieldname": "naming_series",
       "fieldtype": "Select",
       "hidden": 1,
       "label": "Naming Series",
-      "options": "CPO-.YYYY.-.#####",
+      "options": "TRB-.YYYY.-.#####",
       "reqd": 1
     },
     {
       "fieldname": "company",
       "fieldtype": "Link",
+      "in_list_view": 1,
       "in_standard_filter": 1,
       "label": "Company",
       "options": "Company",
-      "reqd": 1
-    },
-    {
-      "fieldname": "payer",
-      "fieldtype": "Link",
-      "in_list_view": 1,
-      "in_standard_filter": 1,
-      "label": "Payer",
-      "options": "Customer",
       "reqd": 1
     },
     {
@@ -64,19 +62,38 @@
       "reqd": 1
     },
     {
-      "fieldname": "expected_payment_date",
-      "fieldtype": "Date",
-      "label": "Expected Payment Date"
+      "fieldname": "endorsement_year",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Endorsement Year",
+      "read_only": 1
+    },
+    {
+      "fieldname": "endorsement_month",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "in_standard_filter": 1,
+      "label": "Endorsement Month",
+      "read_only": 1
+    },
+    {
+      "default": "AED",
+      "fieldname": "currency",
+      "fieldtype": "Link",
+      "label": "Currency",
+      "options": "Currency",
+      "read_only": 1
     },
     {
       "fieldname": "source_section",
       "fieldtype": "Section Break",
-      "label": "Source PO"
+      "label": "Endorsement Report"
     },
     {
       "fieldname": "source_file",
       "fieldtype": "Attach",
-      "label": "PO Excel File",
+      "label": "Endorsement Report File",
       "reqd": 1
     },
     {
@@ -86,21 +103,6 @@
       "label": "Source File Hash",
       "read_only": 1,
       "unique": 1
-    },
-    {
-      "fieldname": "external_po_ref",
-      "fieldtype": "Data",
-      "in_list_view": 1,
-      "in_standard_filter": 1,
-      "label": "POID/Year",
-      "read_only": 1
-    },
-    {
-      "fieldname": "currency",
-      "fieldtype": "Link",
-      "label": "Currency",
-      "options": "Currency",
-      "read_only": 1
     },
     {
       "fieldname": "processing_section",
@@ -114,7 +116,13 @@
       "in_list_view": 1,
       "in_standard_filter": 1,
       "label": "Status",
-      "options": "Draft\nValidating\nValidation Failed\nValidated\nImported\nProcessing\nProcessed\nPartially Settled\nFully Settled\nFailed\nCancelled",
+      "options": "Draft\nValidating\nValidation Failed\nValidated\nImported\nProcessing\nProcessed\nFailed\nCancelled",
+      "read_only": 1
+    },
+    {
+      "fieldname": "validation_summary",
+      "fieldtype": "Small Text",
+      "label": "Validation Summary",
       "read_only": 1
     },
     {
@@ -138,31 +146,66 @@
       "read_only": 1
     },
     {
-      "fieldname": "total_claims",
+      "fieldname": "totals_section",
+      "fieldtype": "Section Break",
+      "label": "Totals"
+    },
+    {
+      "fieldname": "total_events",
       "fieldtype": "Int",
-      "label": "Total Claims",
+      "label": "Total Events",
       "read_only": 1
     },
     {
-      "fieldname": "total_providers",
+      "fieldname": "total_positive_events",
       "fieldtype": "Int",
-      "label": "Total Providers",
+      "label": "Positive Events",
       "read_only": 1
     },
     {
-      "fieldname": "total_amount",
+      "fieldname": "total_deletion_events",
+      "fieldtype": "Int",
+      "label": "Deletion Events",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_payers",
+      "fieldtype": "Int",
+      "label": "Total Payers",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_invoice_amount",
       "fieldtype": "Currency",
-      "label": "Total Amount",
+      "label": "Invoice Amount",
       "options": "currency",
       "read_only": 1
     },
     {
-      "default": "0",
-      "fieldname": "clearing_difference",
+      "fieldname": "total_credit_note_amount",
       "fieldtype": "Currency",
-      "label": "Clearing Difference",
+      "label": "Credit Note Amount",
       "options": "currency",
       "read_only": 1
+    },
+    {
+      "fieldname": "net_tpa_fee",
+      "fieldtype": "Currency",
+      "label": "Net TPA Fee",
+      "options": "currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "total_schedule_amount",
+      "fieldtype": "Currency",
+      "label": "Scheduled Revenue Total",
+      "options": "currency",
+      "read_only": 1
+    },
+    {
+      "fieldname": "logs_section",
+      "fieldtype": "Section Break",
+      "label": "Logs"
     },
     {
       "fieldname": "validation_log",
@@ -180,16 +223,15 @@
   "index_web_pages_for_search": 0,
   "is_submittable": 1,
   "links": [],
-  "modified": "2026-06-18 00:00:00.000000",
+  "modified": "2026-06-22 00:00:00.000000",
   "modified_by": "Administrator",
   "module": "Lifeline TPA",
-  "name": "Claims PO Batch",
+  "name": "TPA Revenue Batch",
   "owner": "Administrator",
   "permissions": [
     {
       "cancel": 1,
       "create": 1,
-      "delete": 1,
       "email": 1,
       "export": 1,
       "print": 1,
@@ -201,15 +243,11 @@
       "write": 1
     },
     {
-      "create": 1,
-      "email": 1,
       "export": 1,
       "print": 1,
       "read": 1,
       "report": 1,
-      "role": "Lifeline TPA User",
-      "submit": 1,
-      "write": 1
+      "role": "Lifeline TPA User"
     },
     {
       "export": 1,

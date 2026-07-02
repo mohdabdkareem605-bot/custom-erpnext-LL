@@ -1,0 +1,32 @@
+{
+  "add_total_row": 1,
+  "creation": "2026-06-22 00:00:00.000000",
+  "disable_prepared_report": 0,
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Report",
+  "filters": [],
+  "idx": 0,
+  "is_standard": "Yes",
+  "letterhead": null,
+  "modified": "2026-06-22 00:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Lifeline TPA",
+  "name": "TPA Revenue Invoice Reconciliation",
+  "owner": "Administrator",
+  "prepared_report": 0,
+  "ref_doctype": "TPA Revenue Event",
+  "report_name": "TPA Revenue Invoice Reconciliation",
+  "report_type": "Script Report",
+  "roles": [
+    {
+      "role": "Lifeline TPA Manager"
+    },
+    {
+      "role": "Lifeline TPA User"
+    },
+    {
+      "role": "Lifeline TPA Read Only"
+    }
+  ]
+}
